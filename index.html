@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Taste of Naija – Authentic Nigerian Meats Delivered UK</title>
+  <meta name="description" content="Fresh Nigerian goat meat and ingredients delivered across the UK. Authentic taste, guaranteed freshness, trusted by thousands.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════ -->
+<nav>
+  <a href="#" class="nav-logo">Taste of <span>Naija</span></a>
+  <div class="nav-right">
+    <a href="#" class="nav-icon-btn" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+      🏠 Home
+    </a>
+    <button class="nav-icon-btn" onclick="openCart()">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+    <button class="nav-icon-btn" onclick="toggleMenu()" id="menuBtn">
+      ☰ Menu
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DROPDOWN MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#products"      onclick="closeMenu()">🛍️ Shop</a>
+  <a href="#categories"    onclick="closeMenu()">📦 Categories</a>
+  <a href="#why-us"        onclick="closeMenu()">ℹ️ About Us</a>
+  <a href="#testimonials"  onclick="closeMenu()">⭐ Reviews</a>
+  <a href="#contact"       onclick="closeMenu()">💬 Contact</a>
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">Fresh from Nigeria · Delivered UK-wide</div>
+      <h1>
+        Taste of Home,
+        <em>Delivered to Your Door</em>
+      </h1>
+      <p class="hero-sub">
+        Fresh Nigerian meats, groceries and ingredients delivered across the UK.
+        Authentic flavours, guaranteed freshness, trusted by thousands.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+          Shop Now →
+        </button>
+        <a href="#why-us" class="btn-outline">How it Works</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">4.9★</div>
+          <div class="hero-stat-label">Customer Rating</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">2,400+</div>
+          <div class="hero-stat-label">Orders Delivered</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">UK-Wide</div>
+          <div class="hero-stat-label">Next-Day Delivery</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-frame">🍖</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TRUST STRIP
+══════════════════════════════════════ -->
+<section class="trust-section">
+  <div class="trust-grid">
+    <div class="trust-card">
+      <div class="trust-icon">🇳🇬</div>
+      <div class="trust-title">100% Authentic African & Nigerian</div>
+      <div class="trust-desc">Sourced for genuineAfrican &  Nigerian taste. The real thing, not a substitute.</div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">⭐</div>
+      <div class="trust-title">4.9/5 Customer Rating</div>
+      <div class="trust-desc">Loved by thousands of customers across the UK.</div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">📦</div>
+      <div class="trust-title">Freshly Packed Daily</div>
+      <div class="trust-desc">Quality checked before every dispatch. Never frozen.</div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🚚</div>
+      <div class="trust-title">Fast Nationwide Delivery</div>
+      <div class="trust-desc">Reliable delivery across the UK, tracked door-to-door.</div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🔒</div>
+      <div class="trust-title">Secure Ordering</div>
+      <div class="trust-desc">Simple, transparent ordering with WhatsApp verification.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CATEGORIES
+══════════════════════════════════════ -->
+<section class="section categories-section" id="categories">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Browse by Category</span>
+      <h2 class="section-title">What Are You Looking For?</h2>
+    </div>
+    <div class="cat-grid">
+      <div class="cat-card" onclick="scrollToProduct('goat-head')">
+        <div class="cat-img">🐐</div>
+        <div class="cat-info">
+          <div class="cat-name">Fresh Goat Head</div>
+          <div class="cat-sub">Cleaned · Freshly packed</div>
+        </div>
+      </div>
+      <div class="cat-card" onclick="scrollToProduct('goat-3kg')">
+        <div class="cat-img">🐐</div>
+        <div class="cat-info">
+          <div class="cat-name">Fresh Goat Meat</div>
+          <div class="cat-sub">Cleaned · Only Meat</div>
+        </div>
+      </div>
+      <div class="cat-card" onclick="scrollToProduct('goat-5kg')">
+        <div class="cat-img">🐐</div>
+        <div class="cat-info">
+          <div class="cat-name">Fresh Goat Meat</div>
+          <div class="cat-sub">Cleaned · All Part Inclusive</div>
+        </div>
+      </div>
+      <div class="cat-card" onclick="scrollToProduct('snail-Meat')">
+        <div class="cat-img">🐌</div>
+        <div class="cat-info">
+          <div class="cat-name">Fresh Snail Meat</div>
+          <div class="cat-sub">Wild-caught · Packaged</div>
+        </div>
+      </div>
+      <div class="cat-card" onclick="scrollToProduct('Ponmo-Ijebu')">
+        <div class="cat-img">🥩</div>
+        <div class="cat-info">
+          <div class="cat-name">Fresh & Dried Ponmo</div>
+          <div class="cat-sub">Packed · Cleaned</div>
+        </div>
+      </div>
+      <div class="cat-card" onclick="scrollToProduct('Turkey')">
+        <div class="cat-img">&#129411;</div>
+        <div class="cat-info">
+          <div class="cat-name">Turkey Wings</div>
+          <div class="cat-sub">Fresh Nigeria Turkey · Good</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     PRODUCTS
+══════════════════════════════════════ -->
+<section class="section products-section" id="products">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Featured Products</span>
+      <h2 class="section-title">Fresh From the Source</h2>
+      <p class="section-subtitle">Every product packed fresh, quality-checked, and dispatched the same day.</p>
+    </div>
+
+<!-- SEARCH BAR -->
+<div class="search-wrapper">
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input
+      type="text"
+      id="productSearch"
+      class="search-input"
+      placeholder="Search products e.g. goat meat, snail, 2kg..."
+      oninput="searchProducts()"
+    >
+    <button class="search-clear" id="searchClear" onclick="clearSearch()">✕</button>
+  </div>
+  <div class="search-results-info" id="searchInfo"></div>
+</div>
+    
+    <!-- Populated by app.js -->
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     WHY US
+══════════════════════════════════════ -->
+<section class="section why-section" id="why-us">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Why Choose Us</span>
+      <h2 class="section-title">The Taste of Naija Difference</h2>
+      <p class="section-subtitle">We do things differently — because your family deserves authenticity, not a substitute.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <span class="why-icon">🇳🇬</span>
+        <div class="why-title">Authentic Sourcing</div>
+        <div class="why-desc">Every product is sourced to replicate the exact flavour profiles of Nigerian home cooking. No compromises.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">✅</span>
+        <div class="why-title">Freshness Guaranteed</div>
+        <div class="why-desc">We pack your order the morning it ships. No frozen meat sitting in a warehouse for weeks.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">⭐</span>
+        <div class="why-title">Trusted by Thousands</div>
+        <div class="why-desc">Over 2,400 orders delivered across the UK with a 4.9 average review score from real customers.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💰</span>
+        <div class="why-title">Transparent Pricing</div>
+        <div class="why-desc">What you see is what you pay. No surprise charges — delivery and handling shown clearly before you confirm.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">🚚</span>
+        <div class="why-title">UK-Wide Delivery</div>
+        <div class="why-desc">We ship to every corner of the UK — London, Manchester, Birmingham, Glasgow. We've got you covered.</div>
+      </div>
+      <div class="why-card">
+        <span class="why-icon">💬</span>
+        <div class="why-title">WhatsApp Support</div>
+        <div class="why-desc">A real person on WhatsApp to help with your order. No chatbots, no waiting on hold.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════ -->
+<section class="section testimonials-section" id="testimonials">
+  <div class="section-inner">
+    <div class="section-header">
+      <span class="section-eyebrow">Customer Reviews</span>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Real reviews from real customers across the UK.</p>
+    </div>
+    <!-- Populated by app.js -->
+    <div class="testi-grid" id="testiGrid"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     WHATSAPP CTA
+══════════════════════════════════════ -->
+<section class="wa-section" id="contact">
+  <div class="wa-inner">
+    <h2>Need Help Placing Your Order?</h2>
+    <p>Our team is available every day on WhatsApp. Place your order, ask questions, or check availability — we're here.</p>
+    <a href="https://wa.me/447398061863" class="wa-btn" target="_blank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Chat With Us On WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     FOOTER
+══════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">Taste of <span>Naija</span></div>
+        <div class="footer-desc">
+          Authentic Nigerian goat meat and ingredients delivered fresh across the UK.
+          Because home should never feel far away.
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Shop</div>
+        <ul class="footer-links">
+          <li><a href="#">Fresh Goat Meat</a></li>
+          <li><a href="#">Nigerian Snail</a></li>
+          <li><a href="#">All Products</a></li>
+          <li><a href="#">Bulk Orders</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Information</div>
+        <ul class="footer-links">
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-heading">Legal</div>
+        <ul class="footer-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Returns Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 Taste of Naija. All rights reserved.</div>
+      <div class="footer-copy">🇬🇧 Delivering across the United Kingdom</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     CART DRAWER
+══════════════════════════════════════ -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-header">
+    <h3>Your Cart</h3>
+    <button class="close-btn" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="empty-cart">
+      <div class="empty-icon">🛒</div>
+      <p>Your cart is empty.<br>Browse our products and add items.</p>
+    </div>
+  </div>
+  <div class="cart-footer" id="cartFooter" style="display:none">
+    <div class="cart-fee-row">
+      <span>Subtotal</span><span id="cartSubtotal">£0.00</span>
+    </div>
+    <div class="cart-fee-row locked">
+      <span>Delivery Fee</span><span>£7.99</span>
+    </div>
+    <div class="cart-fee-row locked">
+      <span>Handling Fee</span><span>£1.99</span>
+    </div>
+    <div class="cart-total">
+      <span>Total</span><span id="cartTotal">£0.00</span>
+    </div>
+    <button class="checkout-btn" onclick="startCheckout()">
+      Proceed to Checkout →
+    </button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     CHECKOUT MODAL
+══════════════════════════════════════ -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal">
+    <div class="step-progress" id="stepProgress">
+      <div class="step-dot active" id="dot1"></div>
+      <div class="step-dot"        id="dot2"></div>
+      <div class="step-dot"        id="dot3"></div>
+      <div class="step-dot"        id="dot4"></div>
+    </div>
+    <div id="checkoutContent"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     STICKY WHATSAPP BUTTON
+══════════════════════════════════════ -->
+<button class="sticky-wa"
+        onclick="window.open('https://wa.me/447398061863','_blank')"
+        title="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</button>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toast"></div>
+
+<!-- ══════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════ -->
+<script src="app.js"></script>
+
+</body>
+</html>
